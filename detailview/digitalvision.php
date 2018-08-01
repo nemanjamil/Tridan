@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -72,7 +72,7 @@
                     <aside>
 
                         <!--Social Icons in Header-->
-                        <ul class="social-icons">
+                        <!--<ul class="social-icons">
                             <li>
                                 <a target="_blank" title="Facebook" href="https://www.facebook.com/username">
                                     <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
@@ -98,7 +98,7 @@
                                     <i class="fa fa-behance fa-1x"></i><span>Behance</span>
                                 </a>
                             </li>
-                        </ul>
+                        </ul>-->
                         <!--End of Social Icons in Header-->
 
                     </aside>
@@ -127,9 +127,9 @@
                             <li>
                                 <a href="#clients">Clients</a>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="#pricing">Pricing</a>
-                            </li>
+                            </li>-->
                         </ul>
                     </nav>
                     <!--End of Main Navigation-->
@@ -148,7 +148,8 @@
             <div class="col-38">
 
                 <div class="section-heading">
-                    <h1>CUSTOM TAILORED WebShop and Integrated Solutions</h1>
+                    <h1>CLIENT -> DIGITAL VISION </h1>
+                    <h2>CUSTOM TAILORED WebShop and Integrated Solutions</h2>
 
                     <h2>{ Synchronize with accounting system on Sybase database, RestApi wih Native Mobile applications, Custom Admin panel, and much more.... }</h2>
                 </div>
@@ -427,143 +428,15 @@
 
                 </div>
 
-                <div class="col-2-3">
-
-                    <a href="/detailview/digitalvision.php" class="col-3">
-                        <img src="images/company-images/company-logo-digital-vision.png" alt="Company"/>
-
-                        <div class="client-overlay"><span>Tree</span></div>
-                    </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo2.png" alt="Company"/>
-
-                        <div class="client-overlay"><span>Fingerprint</span></div>
-                    </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo3.png" alt="Company"/>
-
-                        <div class="client-overlay"><span>The Man</span></div>
-                    </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo4.png" alt="Company"/>
-
-                        <div class="client-overlay"><span>Mustache</span></div>
-                    </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo5.png" alt="Company"/>
-
-                        <div class="client-overlay"><span>Goat</span></div>
-                    </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo6.png" alt="Company"/>
-
-                        <div class="client-overlay"><span>Justice</span></div>
-                    </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo7.png" alt="Company"/>
-
-                        <div class="client-overlay"><span>Ball</span></div>
-                    </a>
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo8.png" alt="Company"/>
-
-                        <div class="client-overlay"><span>Cold</span></div>
-                    </a>
-
-                    <a href="#" class="col-3">
-                        <img src="images/company-images/company-logo9.png" alt="Company"/>
-
-                        <div class="client-overlay"><span>Cold</span></div>
-                    </a>
-
-                </div>
+                <?php
+                include('othersites.html');
+                ?>
 
             </div>
         </section>
         <!--End of Clients-->
 
-        <!--Pricing Tables-->
-        <section id="pricing" class="secondary-color text-center scrollto clearfix ">
-            <div class="row clearfix">
 
-                <div class="section-heading">
-                    <h3>YOUR CHOICE</h3>
-
-                    <h2 class="section-title">We have the right package for you</h2>
-                </div>
-
-                <!--Pricing Block-->
-                <div class="pricing-block col-3 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="pricing-block-content">
-                        <h3>Personal</h3>
-
-                        <p class="pricing-sub">The standard version</p>
-
-                        <div class="pricing">
-                            <div class="price"><span>$</span>19</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        </div>
-                        <ul>
-                            <li>5 Downloads</li>
-                            <li>2 Extensions</li>
-                            <li>Tutorials</li>
-                            <li>Forum Support</li>
-                            <li>1 year free updates</li>
-                        </ul>
-                        <a href="#" class="button">BUY TODAY</a>
-                    </div>
-                </div>
-                <!--End Pricing Block-->
-
-                <!--Pricing Block-->
-                <div class="pricing-block featured col-3 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="pricing-block-content">
-                        <h3>Student</h3>
-
-                        <p class="pricing-sub">Most popular choice</p>
-
-                        <div class="pricing">
-                            <div class="price"><span>$</span>29</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        </div>
-                        <ul>
-                            <li>15 Downloads</li>
-                            <li>5 Extensions</li>
-                            <li>Tutorials with Files</li>
-                            <li>Forum Support</li>
-                            <li>2 years free updates</li>
-                        </ul>
-                        <a href="#" class="button">BUY TODAY</a>
-                    </div>
-                </div>
-                <!--End Pricing Block-->
-
-                <!--Pricing Block-->
-                <div class="pricing-block col-3 wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="pricing-block-content">
-                        <h3>Business</h3>
-
-                        <p class="pricing-sub">For the whole team</p>
-
-                        <div class="pricing">
-                            <div class="price"><span>$</span>49</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        </div>
-                        <ul>
-                            <li>Unlimited Downloads</li>
-                            <li>Unlimited Extensions</li>
-                            <li>HD Video Tutorials</li>
-                            <li>Chat Support</li>
-                            <li>Lifetime free updates</li>
-                        </ul>
-                        <a href="#" class="button">BUY TODAY</a>
-                    </div>
-                </div>
-                <!--End Pricing Block-->
-
-            </div>
-        </section>
-        <!--End of Pricing Tables-->
 
     </main>
     <!--End Main Content Area-->
@@ -573,37 +446,9 @@
     <footer id="landing-footer" class="clearfix">
         <div class="row clearfix">
 
-            <p id="copyright" class="col-2">Made with love by <a href="https://www.shapingrain.com">ShapingRain</a></p>
+            <p id="copyright" class="col-2">Made with love by <a href="/">BeoDigital.tech</a></p>
 
-            <!--Social Icons in Footer-->
-            <ul class="col-2 social-icons">
-                <li>
-                    <a target="_blank" title="Facebook" href="https://www.facebook.com/username">
-                        <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" title="Google+" href="http://google.com/+username">
-                        <i class="fa fa-google-plus fa-1x"></i><span>Google+</span>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" title="Twitter" href="http://www.twitter.com/username">
-                        <i class="fa fa-twitter fa-1x"></i><span>Twitter</span>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" title="Instagram" href="http://www.instagram.com/username">
-                        <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" title="behance" href="http://www.behance.net">
-                        <i class="fa fa-behance fa-1x"></i><span>Behance</span>
-                    </a>
-                </li>
-            </ul>
-            <!--End of Social Icons in Footer-->
+
         </div>
     </footer>
     <!--End of Footer-->
