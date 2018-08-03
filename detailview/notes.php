@@ -119,16 +119,16 @@
             <div class="col-38">
 
                 <div class="section-heading">
-                    <h1>CLIENT -> DODATNA OPREMA </h1>
+                    <h1>NOTES APP</h1>
 
-                    <h2>Custom made Web Solution</h2>
+                    <h2>Solution for implementation in ongoing systems</h2>
 
-                    <h2>{ This company synchronise prices and availability with other B2B warehouses }</h2>
+                    <h2>{ This is simple AngularJS solution for Notes }</h2>
                 </div>
 
             </div>
             <div class="col-61">
-                <img src="images/banner-images/dodatnaoprema.png" alt="">
+                <img src="images/banner-images/notes.png" alt="">
                 <!--End Call to Action-->
 
             </div>
@@ -151,13 +151,16 @@
 
                         <h2 class="section-title">What we do on this project</h2>
 
-                        <p class="section-subtitle">Client ask from us to create system that will comunicate with other
-                            B2B system and collect all articles from them and storage articles in his database
-                            </p>
-                        <p class="section-subtitle">Company has 5 emaployess</p>
+                        <p class="section-subtitle">NOTES APPLICATION
+                        </p>
 
-                        <p class="section-subtitle"><a target="_blank" href="http://dodatnaoprema.com/">dodatnaoprema.com/</a></p>
+                        <p class="section-subtitle">Easy To Implement</p>
 
+                        <p class="section-subtitle"><a target="_blank" href="http://notes-angularjs.beodigital.tech/">notes-angularjs.beodigital.tech</a></p>
+
+                        <p class="section-subtitle"><a target="_blank" href="https://github.com/nemanjamil/notes-angularjs">https://github.com/nemanjamil/notes-angularjs</a></p>
+
+                        <p class="section-subtitle"><a target="_blank" href="https://github.com/nemanjamil/godaddyserver">https://github.com/nemanjamil/godaddyserver</a></p>
 
 
                     </div>
@@ -165,62 +168,24 @@
                 </div>
 
                 <div class="col-2-3">
-                    <h2>Requirements from client</h2>
-
+                    <h2>Requirements</h2>
 
 
                     <div class="col-2 icon-block icon-top wow fadeInUp catul" data-wow-delay="0.1s">
                         <div class="icon-block-description">
-                            <h4>Synchronise all articles data from ALL B2B wareHouses every change in system</h4>
+                            <h4>APP </h4>
 
                             <p>What we do : </p>
 
                             <ul>
-                                <li>Direct query to DataBase</li>
-                                <li>Use RestAPi Calls</li>
-                            </ul>
-                            <aside id="gallery" class="row text-center scrollto clearfix" data-featherlight-gallery
-                                   data-featherlight-filter="a">
-                                <a href="/dokumenti/dodatnaoprema.jpg" data-featherlight="image" class="col-2 wow fadeIn"
-                                   data-wow-delay="0.1s"><img src="/dokumenti/dodatnaoprema.jpg" alt="Landing Page"/></a>
-                            </aside>
-                        </div>
-                    </div>
-
-                    <div class="col-2 icon-block icon-top wow fadeInUp catul" data-wow-delay="0.1s">
-                        <div class="icon-block-description">
-                            <h4>Admin Panel</h4>
-
-                            <p>What we do : </p>
-
-                            <p>Admin panel consist of two parts</p>
-                            <ul>
-                                <li>System monitoring - B2B ordering </li>
-                                <li>System monitoring - Synchronising services -  CREATE CRON JOBS</li>
-                                <li>Front End Management</li>
-                                <li>Different prices of articles bases of B2C group that user belong</li>
+                                <li>Laravel Framework for Back End</li>
+                                <li>Angular JS for FRONT END</li>
+                                <li>GULP FOR SCSS</li>
                             </ul>
 
-                            <p>
-                                <br>
-                                <br>
-                                <br>
-                            </p>
                         </div>
                     </div>
 
-
-
-
-                    <div class="col-2 icon-block icon-top wow fadeInUp catul" data-wow-delay="0.1s">
-                        <div class="icon-block-description">
-                            <h4>Support</h4>
-
-                            <p style="text-decoration: underline">When we develop website from ground we give client full support and maintenance of whole system</p>
-
-                            <p>24/7</p>
-                        </div>
-                    </div>
 
                     <div class="col-2 icon-block icon-top wow fadeInUp catul" data-wow-delay="0.1s">
                         <div class="icon-block-description">
@@ -233,7 +198,6 @@
                             <p>Fully Responsive</p>
                         </div>
                     </div>
-
 
 
                 </div>
@@ -249,12 +213,12 @@
         <aside id="gallery" class="row text-center scrollto clearfix" data-featherlight-gallery
                data-featherlight-filter="a">
 
-            <a href="/detailview/images/gallery-images/dodatnaoprema1.png" data-featherlight="image" class="col-3 wow fadeIn"
-               data-wow-delay="0.1s"><img src="/detailview/images/gallery-images/dodatnaoprema1.PNG" alt="Landing Page"/></a>
-            <a href="/detailview/images/gallery-images/dodatnaoprema2.PNG" data-featherlight="image" class="col-3 wow fadeIn"
-               data-wow-delay="0.3s"><img src="/detailview/images/gallery-images/dodatnaoprema2.PNG" alt="Landing Page"/></a>
-            <a href="/detailview/images/gallery-images/dodatnaoprema3.PNG" data-featherlight="image" class="col-3 wow fadeIn"
-               data-wow-delay="0.5s"><img src="/detailview/images/gallery-images/dodatnaoprema3.PNG" alt="Landing Page"/></a>
+            <a href="/detailview/images/gallery-images/notes1.PNG" data-featherlight="image" class="col-3 wow fadeIn"
+               data-wow-delay="0.1s"><img src="/detailview/images/gallery-images/notes1.PNG" alt="Landing Page"/></a>
+            <a href="/detailview/images/gallery-images/notes2.PNG" data-featherlight="image" class="col-3 wow fadeIn"
+               data-wow-delay="0.3s"><img src="/detailview/images/gallery-images/notes2.PNG" alt="Landing Page"/></a>
+            <a href="/detailview/images/gallery-images/notes3.PNG" data-featherlight="image" class="col-3 wow fadeIn"
+               data-wow-delay="0.5s"><img src="/detailview/images/gallery-images/notes3.PNG" alt="Landing Page"/></a>
 
 
         </aside>
@@ -271,8 +235,7 @@
                 <div class="col-3">
                     <!--User Testimonial-->
                     <blockquote class="testimonial text-right bigtest">
-                        <q>Web Shop created for us</q>
-                        <footer>— Nole - dodatnaoprema</footer>
+
                     </blockquote>
                     <!-- End of Testimonial-->
 
@@ -286,11 +249,23 @@
 
                         <h2 class="section-title">Technology for this project</h2>
 
-                        <p class="section-subtitle">This is one fast i reliable custom made WebShop with PhP,
-                            MSSQL, Sync, Jquery, Bootstrap </p>
+
                     </div>
-                    <p>
-                        Whole project is in PHP language. DB is MySql
+                    <p class="section-subtitle">
+                    BACK END
+                    <ul>
+                        <li>LARAVEL</li>
+                        <li>Mysql database</li>
+                    </ul>
+                    </p>
+
+
+                    <p class="section-subtitle">
+                        FRONT END
+                    <ul>
+                        <li>Angular JS</li>
+                        <li>Gulp</li>
+                    </ul>
                     </p>
 
 
@@ -317,31 +292,6 @@
 
             <div class="row clearfix">
 
-                <div class="section-heading">
-                    <h3>FEEDBACK</h3>
-
-                    <h2 class="section-title">What this client said about this project and us</h2>
-                </div>
-
-                <!--User Testimonial-->
-                <blockquote class="col-3 testimonial classic">
-
-                </blockquote>
-                <!-- End of Testimonial-->
-
-                <!--User Testimonial-->
-                <blockquote class="col-3 testimonial classic">
-                    <img src="images/user-images/dodatna-oprema-logo.png" alt="User"/>
-                    <q>Strong communication with this developers</q>
-                    <footer>Nole</footer>
-                </blockquote>
-                <!-- End of Testimonial-->
-
-                <!--User Testimonial-->
-                <blockquote class="col-3 testimonial classic">
-
-                </blockquote>
-                <!-- End of Testimonial-->
 
             </div>
 
