@@ -298,7 +298,7 @@
                 <div class="section-heading">
                     <h3>FEEDBACK</h3>
 
-                    <h2 class="section-title">Government give us short feed back -> "OK, mission accomplished"</h2>
+                    <h2 class="section-title">"Product is done on Time – Quality – Cost"</h2>
                 </div>
 
                 <!--User Testimonial-->
