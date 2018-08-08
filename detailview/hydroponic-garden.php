@@ -312,6 +312,16 @@
                data-wow-delay="0.3s"><img src="/detailview/images/gallery-images/hydro_android_5.png" alt="Landing Page"/></a>
             <a href="/detailview/images/gallery-images/hydro_android_6.png" data-featherlight="image" class="col-3 wow fadeIn"
                data-wow-delay="0.3s"><img src="/detailview/images/gallery-images/hydro_android_6.png" alt="Landing Page"/></a>
+            <a href="/detailview/images/gallery-images/hydro_android_7.png" data-featherlight="image" class="col-3 wow fadeIn"
+               data-wow-delay="0.3s"><img src="/detailview/images/gallery-images/hydro_android_7.png" alt="Landing Page"/></a>
+            <a href="/detailview/images/gallery-images/hydro_android_8.png" data-featherlight="image" class="col-3 wow fadeIn"
+               data-wow-delay="0.3s"><img src="/detailview/images/gallery-images/hydro_android_8.png" alt="Landing Page"/></a>
+
+            <a href="/detailview/images/gallery-images/start.jpg" data-featherlight="image" class="col-2 wow fadeIn"
+               data-wow-delay="0.1s"><img src="/detailview/images/gallery-images/start.jpg" alt="Landing Page"/></a>
+            <a href="/detailview/images/gallery-images/walk_through.jpg" data-featherlight="image" class="col-2 wow fadeIn"
+               data-wow-delay="0.1s"><img src="/detailview/images/gallery-images/walk_through.jpg" alt="Landing Page"/></a>
+
 
             <a href="/dokumenti/progarden.jpg" data-featherlight="image" class="col-3 wow fadeIn"
                data-wow-delay="0.3s"><img src="/dokumenti/progarden.jpg" alt="Landing Page"/></a>

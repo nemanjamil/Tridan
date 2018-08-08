@@ -152,7 +152,7 @@
                         <h2 class="section-title">What we do on this project</h2>
 
                         <p class="section-subtitle">Client ask from us to create custom ERP system,
-                            for his work. Core business of company is mobile spare parts and accesories for mobile phones</p>
+                            for his work. Core business of company is mobile spare parts and accessories for mobile phones</p>
 
                         <p class="section-subtitle">Company has more than 100 employees and every employee
                             has to work on admin panel. </p>
@@ -160,7 +160,7 @@
                         <p class="section-subtitle"><a target="_blank" href="http://bg.company3g.com/">http://bg.company3g.com/</a></p>
 
                         <p class="section-subtitle">
-                            This company is one off the biggest in Balkan region for Mobile accesories and we proudly can tell that
+                            This company is one off the biggest in Balkan region for Mobile accessories and we proudly can tell that
                             we develop entire IT system on which every employee works every day.
                         </p>
 
