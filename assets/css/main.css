@@ -1641,3 +1641,54 @@ krug
 .bold {
 	font-weight: bold;
 }
+
+
+/* *******************************************
+**************  Mirko style ******************
+******************************************* */
+
+.projectIntro{
+  display: flex;
+  margin: 5px 0;
+}
+
+.projectIntro_imageContainer{
+	margin-right: 20px;
+}	
+
+.ProjectIntro_image{
+	display: block;
+	width: 220px;
+	height: 150px;
+}
+
+.projectIntro_infoContainer{
+	position: relative;
+	flex-grow: 1;
+}
+
+.projectIntro_infoContainer p{
+	margin-bottom: 10px;
+}
+
+.projectIntro_infoContainer span{
+	position: absolute;
+	display: block;
+	bottom: 0;
+	right: 0;
+}
+
+@media only screen and (max-width: 599px){
+	.projectIntro{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.projectIntro_infoContainer{
+		margin-top: 15px;
+	}
+
+	.projectIntro_infoContainer span{
+		position: relative;
+	}
+} 
