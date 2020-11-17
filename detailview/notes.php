@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 
     <!--Page Title-->
-    <title>BeoDigital.Tech - Custom Tailored Web Solutions</title>
+    <title>tridan.rs - Custom Tailored Web Solutions</title>
 
     <!--Meta Keywords and Description-->
     <meta name="keywords" content="">
@@ -156,7 +156,7 @@
 
                         <p class="section-subtitle">Easy To Implement</p>
 
-                        <p class="section-subtitle"><a target="_blank" href="http://notes-angularjs.beodigital.tech/">notes-angularjs.beodigital.tech</a></p>
+                        <p class="section-subtitle"><a target="_blank" href="http://notes-angularjs.tridan.rs/">notes-angularjs.tridan.rs</a></p>
 
                         <p class="section-subtitle"><a target="_blank" href="https://github.com/nemanjamil/notes-angularjs">https://github.com/nemanjamil/notes-angularjs</a></p>
 
@@ -331,7 +331,7 @@
     <footer id="landing-footer" class="clearfix">
         <div class="row clearfix">
 
-            <p id="copyright" class="col-2">Made with love by <a href="/">BeoDigital.tech</a></p>
+            <p id="copyright" class="col-2">Made with love by <a href="/">tridan.rs</a></p>
 
 
         </div>

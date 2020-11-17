@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 
     <!--Page Title-->
-    <title>BeoDigital.Tech - Custom Tailored Web Solutions</title>
+    <title>tridan.rs - Custom Tailored Web Solutions</title>
 
     <!--Meta Keywords and Description-->
     <meta name="keywords" content="">
@@ -381,7 +381,7 @@
     <footer id="landing-footer" class="clearfix">
         <div class="row clearfix">
 
-            <p id="copyright" class="col-2">Made with love by <a href="/">BeoDigital.tech</a></p>
+            <p id="copyright" class="col-2">Made with love by <a href="/">tridan.rs</a></p>
 
 
         </div>
