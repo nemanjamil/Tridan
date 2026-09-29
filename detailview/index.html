@@ -625,5 +625,27 @@
 <script src="js/site.js"></script>
 
 
+    <!-- Nirmata chat widget: Merkur Agent (https://nirmata.tridan-ai.com/agent/merkur) -->
+    <iframe
+      src="https://nirmata.tridan-ai.com/agents?public_api_key=1dbd8c44da389a4d8061c5ad7989759087ed30b42a11d00c105b58c51fe34e8e"
+      style="
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 450px;
+        height: 800px;
+        background: transparent;
+        border: 0;
+        pointer-events: auto;
+        z-index: 10000;
+        background-color: transparent;
+        padding: 10px;
+      "
+      allowtransparency="true"
+      title="Embedded Widget"
+      allow="microphone; camera; autoplay; screen-wake-lock"
+    ></iframe>
+    <!-- Lets the assistant read the current page so it can help with what the visitor is viewing -->
+    <script src="https://nirmata.tridan-ai.com/widget-context.js" async></script>
 </body>
 </html>
