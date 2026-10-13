@@ -198,8 +198,8 @@
   window.tridanTrack = track;
 
   /* ---------- chat widget (official Tridan AI embed snippet) ---------- */
-  var CHAT_EMBED = "https://merkur.tridan-ai.com/widget-embed.js";
-  var CHAT_AGENT = "https://merkur.tridan-ai.com/agent/merkur";
+  var CHAT_EMBED = "https://nirmata.tridan-ai.com/widget-embed.js";
+  var CHAT_AGENT = "https://nirmata.tridan-ai.com/agent/merkur";
   function loadChat() {
     if (document.querySelector('script[src="' + CHAT_EMBED + '"]')) return;
     var s = document.createElement("script");
