@@ -416,28 +416,124 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Nirmata chat widget: Merkur Agent (https://nirmata.tridan-ai.com/agent/merkur) -->
-    <iframe
-      src="https://nirmata.tridan-ai.com/agents?public_api_key=1dbd8c44da389a4d8061c5ad7989759087ed30b42a11d00c105b58c51fe34e8e"
-      style="
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 450px;
-        height: 800px;
-        background: transparent;
-        border: 0;
-        pointer-events: auto;
-        z-index: 10000;
-        background-color: transparent;
-        padding: 10px;
-      "
-      allowtransparency="true"
-      title="Embedded Widget"
-      allow="microphone; camera; autoplay; screen-wake-lock"
-    ></iframe>
-    <!-- Lets the assistant read the current page so it can help with what the visitor is viewing -->
-    <script src="https://nirmata.tridan-ai.com/widget-context.js" async></script>
+    <!-- Nirmata chat widget: Merkur Agent (https://merkur.tridan-ai.com/agent/merkur)
+         The iframe is created by the script below instead of a fixed 450x800 box, because a
+         fixed box is wider and taller than a phone screen (the widget was cut on the left and
+         at the top) and, while closed, a transparent 450x800 iframe blocks clicks on the page
+         underneath it. The widget tells the page when it opens/closes and when its greeting
+         bubble shows (postMessage), and the iframe is resized to exactly what is visible. -->
+    <script>
+      (function () {
+        var WIDGET_ORIGIN = 'https://merkur.tridan-ai.com';
+        var WIDGET_SRC = WIDGET_ORIGIN + '/agent/merkur';
+        var PHONE_MAX_WIDTH = 768;
+        var LAUNCHER = 80; // px, the round launcher button
+        var MAX_TEXT = 6000; // page context sent to the agent (same as widget-context.js)
+
+        var iframe = document.createElement('iframe');
+        iframe.src = WIDGET_SRC;
+        iframe.title = 'Merkur Agent chat';
+        iframe.setAttribute('allowtransparency', 'true');
+        iframe.setAttribute('allow', 'microphone; camera; autoplay; screen-wake-lock');
+        var st = iframe.style;
+        st.position = 'fixed';
+        st.border = '0';
+        st.background = 'transparent';
+        st.backgroundColor = 'transparent';
+        st.zIndex = '10000';
+        st.colorScheme = 'normal';
+
+        var isOpen = false;
+        var popup = null; // { isOpen, width, height } of the greeting bubble while closed
+
+        function size(w, h, pos) {
+          st.width = w;
+          st.height = h;
+          st.top = pos.top;
+          st.left = pos.left;
+          st.bottom = pos.bottom;
+          st.right = pos.right;
+        }
+
+        function apply() {
+          var vw = window.innerWidth;
+          var vh = window.innerHeight;
+          var corner = { top: 'auto', left: 'auto', bottom: '10px', right: '10px' };
+          if (!isOpen) {
+            if (popup && popup.isOpen) {
+              var pw = Math.min(popup.width || 400, 400, vw - 20);
+              var ph = Math.min(popup.height || 300, 480);
+              size(pw + 'px', ph + 'px', corner);
+            } else {
+              size(LAUNCHER + 'px', LAUNCHER + 'px', corner);
+            }
+            return;
+          }
+          if (vw <= PHONE_MAX_WIDTH) {
+            // Phone: the whole screen; 100dvh follows the browser bars and the keyboard.
+            size('100vw', '100dvh', { top: '0', left: '0', bottom: 'auto', right: 'auto' });
+            if (!CSS.supports || !CSS.supports('height', '100dvh')) st.height = vh + 'px';
+            return;
+          }
+          size('450px', Math.min(vh - 20, 800) + 'px', corner);
+        }
+
+        // ---- page context (what widget-context.js does, bound to THIS iframe) ----
+        function scrape() {
+          var root = document.querySelector('main, article, [role="main"]') || document.body;
+          var text = '';
+          if (root) {
+            var clone = root.cloneNode(true);
+            var ignored = clone.querySelectorAll('[data-nirmata-ignore]');
+            for (var i = 0; i < ignored.length; i++) {
+              if (ignored[i].parentNode) ignored[i].parentNode.removeChild(ignored[i]);
+            }
+            document.body.appendChild(clone);
+            clone.style.position = 'absolute';
+            clone.style.left = '-99999px';
+            text = clone.innerText || root.innerText || '';
+            document.body.removeChild(clone);
+          }
+          text = text.replace(/[ \t]{2,}/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
+          if (text.length > MAX_TEXT) text = text.slice(0, MAX_TEXT) + '…';
+          var metaDesc = document.querySelector('meta[name="description"]');
+          return {
+            url: window.location.href,
+            title: document.title || '',
+            description: metaDesc ? metaDesc.getAttribute('content') || '' : '',
+            text: text,
+          };
+        }
+        function sendContext() {
+          if (!iframe.contentWindow) return;
+          iframe.contentWindow.postMessage(
+            { type: 'NIRMATA_PAGE_CONTEXT', payload: scrape() },
+            WIDGET_ORIGIN
+          );
+        }
+
+        window.addEventListener('message', function (event) {
+          if (event.origin !== WIDGET_ORIGIN || event.source !== iframe.contentWindow) return;
+          var data = event.data || {};
+          if (data.type === 'CHAT_WIDGET_STATE_CHANGE') {
+            isOpen = !!(data.payload && data.payload.isOpen);
+            apply();
+          } else if (data.type === 'INITIAL_MESSAGE_POPUP') {
+            popup = data.payload || null;
+            apply();
+          } else if (data.type === 'NIRMATA_PAGE_CONTEXT_REQUEST') {
+            sendContext();
+          }
+        });
+        window.addEventListener('resize', apply);
+        iframe.addEventListener('load', function () {
+          window.setTimeout(sendContext, 300);
+        });
+
+        apply();
+        document.body.appendChild(iframe);
+      })();
+    </script>
 </body>
 
 </html>
