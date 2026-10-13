@@ -10,3 +10,71 @@
     RewriteRule ^(\.git|\.gitignore|\.env|README\.md|dokumenti)(/.*)?$ - [R=404,L]
   </IfModule>
 </IfModule>
+
+# ---------------------------------------------------------------------------------------------
+# Site rebuild (site/ -> static HTML in this docroot). Everything below needs only
+# AllowOverride FileInfo (mod_alias, mod_rewrite, mod_headers, mod_deflate, ErrorDocument).
+# ---------------------------------------------------------------------------------------------
+
+# Build sources and tooling are never served.
+<IfModule mod_alias.c>
+  RedirectMatch 404 ^/(site|node_modules|\.claude|package\.json|package-lock\.json|CLAUDE\.md)(/.*)?$
+</IfModule>
+<IfModule !mod_alias.c>
+  <IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(site|node_modules|\.claude|package\.json|package-lock\.json|CLAUDE\.md)(/.*)?$ - [R=404,L]
+  </IfModule>
+</IfModule>
+
+AddDefaultCharset UTF-8
+AddType font/woff2 .woff2
+AddType image/svg+xml .svg
+
+# Real 404 pages (English under /en/).
+ErrorDocument 404 /404.html
+<If "%{REQUEST_URI} =~ m#^/en(/|$)#">
+  ErrorDocument 404 /en/404.html
+</If>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # One canonical host: apex and the old madeofwood host -> https://www.tridan.rs (301).
+  RewriteCond %{HTTP_HOST} ^(tridan\.rs|tridan\.madeofwood\.rs)\.?(:\d+)?$ [NC]
+  RewriteRule ^ https://www.tridan.rs%{REQUEST_URI} [R=301,L,NE]
+
+  # Explicit .../index.html in the address bar -> the clean folder URL (only real client
+  # requests, never the internal DirectoryIndex subrequest).
+  RewriteCond %{THE_REQUEST} ^[A-Z]+\s/+((?:[^\s?]*/)?)index\.html[\s?]
+  RewriteRule ^ /%1 [R=301,L,NE]
+</IfModule>
+
+# Old template pages (orphan /detailview/*.php case studies) -> projects page.
+<IfModule mod_alias.c>
+  RedirectMatch 301 ^/detailview(/.*)?$ https://www.tridan.rs/projekti/
+</IfModule>
+
+# Compression.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/javascript text/javascript application/json application/ld+json image/svg+xml
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Security headers.
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+
+  # Caching. CSS/JS are referenced with ?v=<content hash>, so they can be cached for a year.
+  <FilesMatch "\.(css|js|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpe?g|webp|avif|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(html|xml|txt)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
