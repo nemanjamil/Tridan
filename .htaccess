@@ -1,0 +1,12 @@
+# Never serve version control, repo docs or internal files from the web root.
+# Uses mod_alias (RedirectMatch) so it works with AllowOverride FileInfo; falls back to mod_rewrite.
+<IfModule mod_alias.c>
+  RedirectMatch 404 ^/\.(git|gitignore|htaccess|env)(/.*)?$
+  RedirectMatch 404 ^/(README\.md|dokumenti)(/.*)?$
+</IfModule>
+<IfModule !mod_alias.c>
+  <IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(\.git|\.gitignore|\.env|README\.md|dokumenti)(/.*)?$ - [R=404,L]
+  </IfModule>
+</IfModule>
