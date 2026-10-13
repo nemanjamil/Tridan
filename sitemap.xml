@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.tridan.rs/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/en/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/usluge/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/usluge/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/usluge/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/en/services/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/usluge/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/usluge/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/usluge/razvoj-web-aplikacija/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/usluge/razvoj-web-aplikacija/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/services/web-application-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/usluge/razvoj-web-aplikacija/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/en/services/web-application-development/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/usluge/razvoj-web-aplikacija/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/services/web-application-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/usluge/razvoj-web-aplikacija/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/usluge/integracije-i-api/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/usluge/integracije-i-api/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/services/integrations-and-api/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/usluge/integracije-i-api/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/en/services/integrations-and-api/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/usluge/integracije-i-api/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/services/integrations-and-api/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/usluge/integracije-i-api/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/usluge/devops-i-cloud/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/usluge/devops-i-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/services/devops-and-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/usluge/devops-i-cloud/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/en/services/devops-and-cloud/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/usluge/devops-i-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/services/devops-and-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/usluge/devops-i-cloud/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/usluge/ai-integracije/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/usluge/ai-integracije/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/services/ai-integration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/usluge/ai-integracije/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/en/services/ai-integration/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/usluge/ai-integracije/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/services/ai-integration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/usluge/ai-integracije/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/projekti/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/projekti/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/projects/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/projekti/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/en/projects/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/projekti/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/projects/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/projekti/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/o-nama/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/o-nama/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/o-nama/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/en/about/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/o-nama/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/o-nama/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/kontakt/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/kontakt/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/en/contact/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/kontakt/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/privatnost/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/privatnost/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/privatnost/"/>
+  </url>
+  <url>
+    <loc>https://www.tridan.rs/en/privacy/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://www.tridan.rs/privatnost/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tridan.rs/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tridan.rs/privatnost/"/>
+  </url>
+</urlset>

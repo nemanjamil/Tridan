@@ -1,0 +1,35 @@
+# Tridan
+
+> Tridan is a custom software development agency in Belgrade, Serbia. It builds full-stack web applications, API integrations, DevOps and cloud infrastructure (AWS, Azure, Google Cloud) and AI integrations for companies in Serbia and abroad. The site is in Serbian (root) and English (/en/).
+
+## Company facts
+
+- Brand: Tridan
+- Legal name: TRIDAN DOO BEOGRAD (SAVSKI VENAC)
+- Registration number (MB): 22337181
+- Tax ID (PIB): 115999142
+- Address: Koste Racina 24, stan 1, 11040 Beograd-Savski Venac, Serbia
+- Email: office@tridan.rs
+- Founder: Nemanja Milivojević (https://www.linkedin.com/in/nemanja-milivojevic/, https://www.youtube.com/@NemanjaMilivojevic)
+- Languages: Serbian, English
+- Services: custom web application development; system integration and API development (including payment gateways); DevOps and cloud infrastructure; AI integration
+- Past clients named on the site: Coca-Cola, VIBE, ICO-cert, Blokaria, Billboard, Nature Plant
+- Delivered work: online exam platforms with face analysis and fraud management; CI/CD on AWS and Azure; payment gateway integrations for UK and Irish companies; database migrations for global enterprises; Coca-Cola promotional giveaways; projects on the Cardano and Avalanche blockchains
+- Training is not offered on this site; it is provided by Tridan Academy (https://tridan-academy.com), a separate company. Ready-made AI agents for calls and chat: Tridan AI (https://tridan-ai.com).
+
+## Pages
+
+- [Custom software development from Belgrade](https://www.tridan.rs/en/) / [Razvoj softvera po meri iz Beograda](https://www.tridan.rs/): Tridan is a Belgrade custom software development agency: web applications, integrations and APIs, DevOps and cloud, and AI integration for companies.
+- [Software development services](https://www.tridan.rs/en/services/) / [Usluge razvoja softvera](https://www.tridan.rs/usluge/): Overview of Tridan services: custom web application development, integrations and APIs, DevOps and cloud infrastructure, and AI integration for companies.
+- [Custom web application development](https://www.tridan.rs/en/services/web-application-development/) / [Razvoj web aplikacija po meri](https://www.tridan.rs/usluge/razvoj-web-aplikacija/): Tridan builds custom full-stack web applications in Belgrade: architecture, UI/UX design, frontend, backend, databases, testing and maintenance.
+- [System integration and API development](https://www.tridan.rs/en/services/integrations-and-api/) / [Integracije sistema i razvoj API-ja](https://www.tridan.rs/usluge/integracije-i-api/): Tridan connects software systems through API integrations: payment gateways, third-party services, data migration and custom REST API development.
+- [DevOps and cloud infrastructure](https://www.tridan.rs/en/services/devops-and-cloud/) / [DevOps i cloud infrastruktura](https://www.tridan.rs/usluge/devops-i-cloud/): Tridan sets up DevOps processes and cloud infrastructure on AWS, Azure and Google Cloud: CI/CD, infrastructure as code, containers and monitoring.
+- [AI integration for companies](https://www.tridan.rs/en/services/ai-integration/) / [AI integracije za kompanije](https://www.tridan.rs/usluge/ai-integracije/): Tridan brings AI into existing applications and processes: chat assistants, document processing, internal knowledge search and automation via APIs.
+- [Projects and clients](https://www.tridan.rs/en/projects/) / [Projekti i klijenti](https://www.tridan.rs/projekti/): Tridan projects: online exams with face analysis, CI/CD on AWS and Azure, payment gateways, database migrations, promotional campaigns and blockchain.
+- [About Tridan](https://www.tridan.rs/en/about/) / [O kompaniji Tridan](https://www.tridan.rs/o-nama/): Tridan is a team of developers and engineers in Belgrade building custom software. Learn who is behind the company, how we work and our company details.
+- [Contact](https://www.tridan.rs/en/contact/) / [Kontakt](https://www.tridan.rs/kontakt/): Contact Tridan at office@tridan.rs. Send a short project description and we reply with proposed next steps. Based in Belgrade, Savski Venac.
+
+## Optional
+
+- [Privacy and cookie policy](https://www.tridan.rs/en/privacy/) / [Politika privatnosti i kolačića](https://www.tridan.rs/privatnost/): How Tridan handles data on tridan.rs: Google Analytics only with consent, cookies, email and your rights.
+- [Sitemap](https://www.tridan.rs/sitemap.xml)
