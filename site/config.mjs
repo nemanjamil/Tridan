@@ -2,7 +2,7 @@
 // everything in <head>, the JSON-LD graph, sitemap.xml, robots.txt and llms.txt is
 // generated from this file by site/build.mjs.
 
-export const SITE_URL = "https://www.tridan.rs";
+export const SITE_URL = "https://tridan.rs";
 export const SITE_NAME = "Tridan";
 export const LANGS = ["sr", "en"];
 export const DEFAULT_LANG = "sr";

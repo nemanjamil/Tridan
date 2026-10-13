@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Static site build for www.tridan.rs. No dependencies: `node site/build.mjs`.
+// Static site build for tridan.rs. No dependencies: `node site/build.mjs`.
 //
 // Sources: site/config.mjs (facts + routes), site/content/{sr,en}.mjs (copy),
 //          site/assets/* (css/js, fingerprinted by query string), site/static/** (copied as is).

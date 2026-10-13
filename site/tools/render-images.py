@@ -27,7 +27,7 @@ background:radial-gradient(900px 500px at 95% -10%,rgba(34,211,238,.28),transpar
 <div style="display:flex;align-items:center;gap:18px;font:800 34px SG;letter-spacing:.16em">{MARK.format(s=64)}TRIDAN</div>
 <div><div style="font:700 66px/1.08 SG;letter-spacing:-.01em;max-width:1060px">Razvoj softvera po meri<br><span style="color:#22d3ee">Custom software development</span></div>
 <div style="margin-top:26px;font-size:28px;color:#cbd5e1">Web aplikacije · Integracije i API · DevOps i cloud · AI integracije</div></div>
-<div style="font-size:24px;color:#94a3b8">www.tridan.rs · Beograd, Srbija</div></div>"""
+<div style="font-size:24px;color:#94a3b8">tridan.rs · Beograd, Srbija</div></div>"""
 
 LOGO = BASE + f"""<div style="width:512px;height:512px;display:grid;place-items:center;background:#0b1220">{MARK.format(s=420)}</div>"""
 TOUCH = BASE + f"""<div style="width:180px;height:180px;display:grid;place-items:center;background:#0b1220">{MARK.format(s=150)}</div>"""

@@ -1,6 +1,6 @@
 # Tridan
 
-Static site for https://www.tridan.rs. Sources live in `site/`; `npm run build` (plain Node, no
+Static site for https://tridan.rs. Sources live in `site/`; `npm run build` (plain Node, no
 dependencies) writes the HTML pages, `/assets`, `sitemap.xml`, `robots.txt` and `llms.txt` into
 the repository root, which is the Apache docroot. Commit the generated files together with the
 sources. Never edit generated HTML by hand.
