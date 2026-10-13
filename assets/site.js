@@ -1,19 +1,15 @@
-/* Tridan site script: mobile menu, cookie consent and GA4 (Consent Mode v2, basic mode).
+/* Tridan site script: mobile menu, cookie consent and GA4 (Consent Mode v2, advanced mode).
  *
- * Basic mode: the Google tag (gtag.js) is NOT requested until the visitor clicks Accept.
+ * The Google tag loads on every page from <head> with analytics_storage "denied", so it sets no
+ * cookies until the visitor clicks Accept; before that Google receives only cookieless pings.
  * The decision lives in localStorage under "tridan-consent" as { v, analytics, decidedAt }.
- * `contact_click` events (mailto/tel links and [data-contact] CTAs) are queued while the
- * visitor has not decided, sent after Accept, and dropped after Reject.
+ * `contact_click` events (mailto/tel links and [data-contact] CTAs) are dropped after Reject.
  */
 (function () {
   "use strict";
-  var GA_ID = document.documentElement.getAttribute("data-ga") || "";
   var KEY = "tridan-consent";
   var VERSION = 1;
-  var MAX_QUEUE = 20;
   var memory = null; // decision when storage is blocked
-  var loaded = false;
-  var queue = [];
 
   document.documentElement.classList.add("js");
 
@@ -62,37 +58,13 @@
   }
 
   /* ---------- gtag ---------- */
-  // Must stay a classic function forwarding `arguments`: Google ignores consent
-  // commands pushed as plain arrays.
+  // The Google tag and the consent default are inline in <head> (Consent Mode v2, advanced).
+  // This script only updates consent and sends events.
   function gtag() {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(arguments);
+    if (typeof window.gtag === "function") window.gtag.apply(window, arguments);
   }
-
-  function loadGa() {
-    if (loaded || !GA_ID) return;
-    loaded = true;
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = gtag;
-    gtag("consent", "default", {
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-      analytics_storage: "denied",
-      functionality_storage: "denied",
-      personalization_storage: "denied",
-      security_storage: "granted",
-    });
-    gtag("consent", "update", { analytics_storage: "granted" });
-    gtag("js", new Date());
-    gtag("config", GA_ID, { anonymize_ip: true });
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_ID);
-    document.head.appendChild(s);
-    var pending = queue;
-    queue = [];
-    for (var i = 0; i < pending.length; i++) gtag("event", pending[i][0], pending[i][1]);
+  function setAnalytics(granted) {
+    gtag("consent", "update", { analytics_storage: granted ? "granted" : "denied" });
   }
 
   function clearGaCookies() {
@@ -116,15 +88,11 @@
     });
   }
 
+  // Before a decision events go out as cookieless pings (advanced mode); after Reject they are dropped.
   function track(name, params) {
     var c = read();
-    if (c && c.analytics === false) return; // rejected: drop
-    if (loaded && c && c.analytics) {
-      gtag("event", name, params || {});
-      return;
-    }
-    if (queue.length >= MAX_QUEUE) queue.shift();
-    queue.push([name, params || {}]);
+    if (c && c.analytics === false) return;
+    gtag("event", name, params || {});
   }
   window.tridanTrack = track;
 
@@ -138,13 +106,8 @@
   function decide(analytics) {
     write(analytics);
     showBanner(false);
-    if (analytics) {
-      loadGa();
-    } else {
-      queue = [];
-      if (loaded) gtag("consent", "update", { analytics_storage: "denied" });
-      clearGaCookies();
-    }
+    setAnalytics(analytics);
+    if (!analytics) clearGaCookies();
   }
 
   if (banner) {
@@ -161,8 +124,7 @@
       e.preventDefault();
       // Reopening withdraws consent until the visitor decides again.
       forget();
-      queue = [];
-      if (loaded) gtag("consent", "update", { analytics_storage: "denied" });
+      setAnalytics(false);
       clearGaCookies();
       showBanner(true);
       var first = banner && banner.querySelector("button");
@@ -180,19 +142,16 @@
     }
   });
 
-  var current = read();
-  if (current && current.analytics) loadGa();
-  else if (!current) showBanner(true);
+  // The consent default in <head> already reflects a stored Accept; only ask when undecided.
+  if (!read()) showBanner(true);
 
   // A decision made in another tab applies here too.
   window.addEventListener("storage", function (e) {
     if (e.key !== KEY && e.key !== null) return;
     var c = read();
-    if (c && c.analytics) {
+    if (c) {
       showBanner(false);
-      loadGa();
-    } else if (c) {
-      showBanner(false);
+      setAnalytics(c.analytics);
     }
   });
 })();

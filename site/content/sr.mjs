@@ -42,7 +42,7 @@ export const ui = {
   },
   cookie: {
     label: "Obaveštenje o kolačićima",
-    text: "Koristimo Google Analytics samo ako to dozvolite, da bismo videli koje stranice su korisne.",
+    text: "Kolačiće za Google Analytics postavljamo samo ako to dozvolite, da bismo videli koje stranice su korisne.",
     link: "Više o privatnosti",
     accept: "Prihvatam",
     reject: "Odbijam",
@@ -488,11 +488,11 @@ export const pages = {
 
   privacy: {
     title: "Privatnost i kolačići | Tridan",
-    description: "Kako Tridan obrađuje podatke na sajtu tridan.rs: Google Analytics samo uz pristanak, kolačići, e-pošta i vaša prava.",
+    description: "Kako Tridan obrađuje podatke na sajtu tridan.rs: Google Analytics kolačići samo uz pristanak, e-pošta i vaša prava.",
     h1: "Politika privatnosti i kolačića",
     breadcrumb: "Privatnost",
     lastUpdated: "13. oktobar 2026.",
-    lead: "Ova stranica objašnjava koje podatke sajt tridan.rs obrađuje, zašto i kako možete da promenite svoj izbor. Sajt ne koristi kolačiće za oglašavanje, a Google Analytics se učitava samo ako ga izričito prihvatite u obaveštenju o kolačićima.",
+    lead: "Ova stranica objašnjava koje podatke sajt tridan.rs obrađuje, zašto i kako možete da promenite svoj izbor. Sajt ne koristi kolačiće za oglašavanje, a kolačići za Google Analytics se postavljaju samo ako ih izričito prihvatite u obaveštenju o kolačićima.",
     sections: [
       { h2: "Ko je rukovalac podacima?", blocks: [{ p: `Rukovalac podacima je ${COMPANY.legalName}, ${COMPANY.address.street}, ${COMPANY.address.postalCode} ${COMPANY.address.locality}, Srbija, MB ${COMPANY.registrationNumber}, PIB ${COMPANY.taxId}. Kontakt za pitanja o privatnosti: <a href="mailto:${COMPANY.email}">${COMPANY.email}</a>.` }] },
       {
@@ -500,7 +500,7 @@ export const pages = {
         blocks: [
           {
             list: [
-              "<strong>Google Analytics 4</strong> (kolačići <code>_ga</code> i <code>_ga_*</code>): učitava se tek kada kliknete „Prihvatam”. Beleži posećene stranice, vrstu uređaja i približnu lokaciju, da bismo videli koje stranice su korisne. Pre pristanka Google skripta se ne učitava.",
+              "<strong>Google Analytics 4</strong> (kolačići <code>_ga</code> i <code>_ga_*</code>): kolačići se postavljaju tek kada kliknete „Prihvatam”. Beleži posećene stranice, vrstu uređaja i približnu lokaciju, da bismo videli koje stranice su korisne. Pre pristanka Google tag radi bez kolačića i šalje samo anonimne signale bez identifikatora (Google Consent Mode).",
               "<strong>Vaš izbor</strong> (<code>tridan-consent</code> u lokalnoj memoriji pregledača): pamti da li ste prihvatili ili odbili analitiku.",
               "<strong>E-pošta</strong>: kada nam pišete, koristimo vašu adresu i poruku samo da bismo odgovorili i vodili dogovor o projektu.",
             ],
