@@ -259,6 +259,16 @@ function head({ lang, title, description, path, alternates, noindex, ld }) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js), Consent Mode v2 advanced: cookies stay off until the visitor accepts -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+(function(){var a="denied";try{var c=JSON.parse(localStorage.getItem("tridan-consent")||"null");if(c&&c.v===1&&c.analytics===true)a="granted";}catch(e){}
+gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:a,functionality_storage:"denied",personalization_storage:"denied",security_storage:"granted",wait_for_update:500});})();
+gtag("js", new Date());
+gtag("config", "${GA_ID}");
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 ${noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow, max-image-preview:large">'}

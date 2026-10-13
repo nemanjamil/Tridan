@@ -31,5 +31,5 @@
 
 ## Optional
 
-- [Privacy and cookie policy](https://www.tridan.rs/en/privacy/) / [Politika privatnosti i kolačića](https://www.tridan.rs/privatnost/): How Tridan handles data on tridan.rs: Google Analytics only with consent, cookies, email and your rights.
+- [Privacy and cookie policy](https://www.tridan.rs/en/privacy/) / [Politika privatnosti i kolačića](https://www.tridan.rs/privatnost/): How Tridan handles data on tridan.rs: Google Analytics cookies only with consent, email and your rights.
 - [Sitemap](https://www.tridan.rs/sitemap.xml)

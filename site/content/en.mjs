@@ -42,7 +42,7 @@ export const ui = {
   },
   cookie: {
     label: "Cookie notice",
-    text: "We use Google Analytics only if you allow it, to see which pages are useful.",
+    text: "We set Google Analytics cookies only if you allow it, to see which pages are useful.",
     link: "Privacy details",
     accept: "Accept",
     reject: "Reject",
@@ -488,11 +488,11 @@ export const pages = {
 
   privacy: {
     title: "Privacy and Cookies | Tridan",
-    description: "How Tridan handles data on tridan.rs: Google Analytics only with consent, cookies, email and your rights.",
+    description: "How Tridan handles data on tridan.rs: Google Analytics cookies only with consent, email and your rights.",
     h1: "Privacy and cookie policy",
     breadcrumb: "Privacy",
     lastUpdated: "13 October 2026",
-    lead: "This page explains which data the tridan.rs website processes, why, and how you can change your choice. The site uses no advertising cookies, and Google Analytics loads only if you explicitly accept it in the cookie notice.",
+    lead: "This page explains which data the tridan.rs website processes, why, and how you can change your choice. The site uses no advertising cookies, and Google Analytics cookies are set only if you explicitly accept them in the cookie notice.",
     sections: [
       { h2: "Who is the data controller?", blocks: [{ p: `The data controller is ${COMPANY.legalName}, ${COMPANY.address.street}, ${COMPANY.address.postalCode} ${COMPANY.address.locality}, Serbia, registration no. ${COMPANY.registrationNumber}, tax ID ${COMPANY.taxId}. Privacy contact: <a href="mailto:${COMPANY.email}">${COMPANY.email}</a>.` }] },
       {
@@ -500,7 +500,7 @@ export const pages = {
         blocks: [
           {
             list: [
-              "<strong>Google Analytics 4</strong> (cookies <code>_ga</code> and <code>_ga_*</code>): loads only after you click \"Accept\". It records pages visited, device type and approximate location so we can see which pages are useful. Before consent the Google script is not loaded.",
+              "<strong>Google Analytics 4</strong> (cookies <code>_ga</code> and <code>_ga_*</code>): cookies are set only after you click \"Accept\". It records pages visited, device type and approximate location so we can see which pages are useful. Before consent the Google tag runs without cookies and sends only anonymous signals without identifiers (Google Consent Mode).",
               "<strong>Your choice</strong> (<code>tridan-consent</code> in the browser's local storage): remembers whether you accepted or rejected analytics.",
               "<strong>Email</strong>: when you write to us, we use your address and message only to reply and discuss the project.",
             ],
