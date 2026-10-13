@@ -24,6 +24,7 @@ export const ui = {
   ctaSecondary: "Kontakt stranica",
   mailSubject: "Upit sa sajta tridan.rs",
   faqHeading: "Česta pitanja",
+  stackLabel: "Tehnologije sa kojima radimo",
   readMore: "Saznajte više",
   footer: {
     tagline: "Agencija za razvoj softvera po meri iz Beograda: web aplikacije, integracije i API, DevOps i cloud, AI integracije.",
@@ -102,6 +103,7 @@ export const pages = {
         h2: "Sa kim je Tridan sarađivao?",
         blocks: [
           { p: `Radili smo sa kompanijama kao što su Coca-Cola, VIBE, ICO-cert, Blokaria, Billboard i Nature Plant, na projektima od biometrijskih sistema i online ispita do promotivnih kampanja i blockchain tehnologija. Detalje pogledajte na stranici <a href="${p("projects")}">projekti</a>.` },
+          { clients: true }
         ],
       },
       {
@@ -405,17 +407,17 @@ export const pages = {
       {
         h2: "Koje projekte je Tridan isporučio?",
         blocks: [
-          { h3: "Online platforme za ispite sa analizom lica" },
+          { h3: "Online platforme za ispite sa analizom lica", icon: "face" },
           { p: "Sarađujemo sa klijentima iz oblasti biometrije. Razvili smo online platforme za polaganje ispita sa integrisanom analizom lica i upravljanjem prevarama." },
-          { h3: "CI/CD na AWS i Azure" },
+          { h3: "CI/CD na AWS i Azure", icon: "pipeline" },
           { p: `Postavili smo procese kontinuirane integracije i isporuke na Amazon Web Services i Microsoft Azure, za efikasnu i pouzdanu isporuku softvera. Više o tome na stranici <a href="${p("devops")}">DevOps i cloud</a>.` },
-          { h3: "Integracija platnih sistema" },
+          { h3: "Integracija platnih sistema", icon: "payment" },
           { p: `Integrisali smo platne sisteme prilagođene kompanijama iz Velike Britanije i Irske. Pogledajte <a href="${p("integrations")}">integracije i API</a>.` },
-          { h3: "Migracija baza podataka" },
+          { h3: "Migracija baza podataka", icon: "database" },
           { p: "Radili smo migracije baza podataka za globalne kompanije." },
-          { h3: "Promotivne kampanje" },
+          { h3: "Promotivne kampanje", icon: "campaign" },
           { p: "Podržali smo promotivne kampanje kao što su Coca-Cola nagradne igre, integracijom sistema koji pokreću marketinške aktivnosti." },
-          { h3: "Blockchain rešenja" },
+          { h3: "Blockchain rešenja", icon: "blockchain" },
           { p: "Radili smo projekte na blockchain mrežama Cardano i Avalanche, sa rešenjima zasnovanim na decentralizovanim mrežama." },
         ],
       },
@@ -503,6 +505,7 @@ export const pages = {
               "<strong>Google Analytics 4</strong> (kolačići <code>_ga</code> i <code>_ga_*</code>): kolačići se postavljaju tek kada kliknete „Prihvatam”. Beleži posećene stranice, vrstu uređaja i približnu lokaciju, da bismo videli koje stranice su korisne. Pre pristanka Google tag radi bez kolačića i šalje samo anonimne signale bez identifikatora (Google Consent Mode).",
               "<strong>Vaš izbor</strong> (<code>tridan-consent</code> u lokalnoj memoriji pregledača): pamti da li ste prihvatili ili odbili analitiku.",
               "<strong>E-pošta</strong>: kada nam pišete, koristimo vašu adresu i poruku samo da bismo odgovorili i vodili dogovor o projektu.",
+              "<strong>Čet (Tridan AI)</strong>: čet prozor u donjem desnom uglu sajta radi na platformi Tridan AI i obrađuje ono što u njega upišete.",
             ],
           },
         ],

@@ -28,3 +28,6 @@
 
 /node_modules/
 .DS_Store
+
+# raw AI image renders (site/tools/gen-images.mjs)
+/site/tools/images-raw/

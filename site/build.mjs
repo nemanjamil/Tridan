@@ -69,6 +69,17 @@ const ICON = {
   devops: '<path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.78A6 6 0 0 0 4.5 12.5 3.5 3.5 0 0 0 6.5 19h11z"/>',
   ai: '<path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3zM18.5 15l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9.9-2.1z"/>',
 };
+// Project icons (Lucide-style strokes), keyed by `icon` on h3 blocks in the content files.
+Object.assign(ICON, {
+  face: '<path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>',
+  pipeline: '<circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M6 8.5v7M8.3 7.2c4.2.6 7 2 7.4 3.4"/>',
+  payment: '<rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/>',
+  database: '<ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v13c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-13M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/>',
+  campaign: '<path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1zM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/>',
+  blockchain: '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h3.5a2 2 0 0 1 2 2V14M14 17.5h-3.5a2 2 0 0 1-2-2V10"/>',
+  check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+});
 const icon = (key) =>
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${ICON[key] || ""}</svg>`;
 const LOGO_MARK =
@@ -82,6 +93,9 @@ const CLIENTS = [ // names only (owner: no links, no logos)
   ["Billboard"],
   ["Nature Plant"],
 ];
+
+// Technologies named in the service copy (devops/integrations pages), shown under the home hero.
+const STACK = ["AWS", "Microsoft Azure", "Google Cloud", "Docker", "Kubernetes", "Terraform", "Ansible", "Jenkins", "Prometheus", "Grafana", "Cardano", "Avalanche"];
 
 // ---------------------------------------------------------------- lint
 const DASH = /[–—]/;
@@ -274,7 +288,7 @@ gtag("config", "${GA_ID}");
 ${noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow, max-image-preview:large">'}
 ${url ? `<link rel="canonical" href="${url}">` : ""}
 ${(alternates || []).map(([hl, href]) => `<link rel="alternate" hreflang="${hl}" href="${href}">`).join("\n")}
-<meta name="theme-color" content="#0b1220">
+<meta name="theme-color" content="#05080f">
 <meta name="author" content="${esc(SITE_NAME)}">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
@@ -307,7 +321,7 @@ function header(lang, key, otherHref) {
   const items = ui.nav
     .map(([k, label]) => {
       const cur = key === k ? ' aria-current="page"' : current.includes(k) ? ' aria-current="true"' : "";
-      return `<li><a href="${pathOf(k, lang)}"${cur}>${esc(label)}</a></li>`;
+      return `<li><a href="${pathOf(k, lang)}"${cur}${k === "contact" ? ' class="nav-cta"' : ""}>${esc(label)}</a></li>`;
     })
     .join("");
   const other = LANGS.find((l) => l !== lang);
@@ -317,7 +331,7 @@ function header(lang, key, otherHref) {
 <a class="brand" href="${pathOf("home", lang)}" aria-label="Tridan, ${esc(ui.breadcrumbHome)}">${LOGO_MARK}<span>TRIDAN</span></a>
 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span class="bars" aria-hidden="true"></span>${esc(ui.menu)}</button>
 <nav id="site-nav" class="site-nav" aria-label="${lang === "sr" ? "Glavni meni" : "Main menu"}">
-<ul>${items}<li><a class="lang" href="${otherHref}" hreflang="${other}" lang="${other}" title="${esc(ui.langSwitch.title)}">${esc(ui.langSwitch.label)}</a></li></ul>
+<ul>${items}<li class="nav-lang"><a class="lang" href="${otherHref}" hreflang="${other}" lang="${other}" title="${esc(ui.langSwitch.title)}">${esc(ui.langSwitch.label)}</a></li></ul>
 </nav>
 </div>
 </header>`;
@@ -362,6 +376,7 @@ function footer(lang) {
 <p>© ${YEAR} ${SITE_NAME}</p>
 </div>
 </div>
+<div class="footer-mark" aria-hidden="true">TRIDAN</div>
 </footer>`;
 }
 
@@ -378,18 +393,41 @@ function cookieBanner(lang) {
 
 const mailto = (lang) => `mailto:${COMPANY.email}?subject=${encodeURIComponent(CONTENT[lang].ui.mailSubject)}`;
 
+// ---------------------------------------------------------------- blocks
+// `reveal(i)` marks an element for the scroll reveal in site.js (stagger index i).
+const reveal = (i = 0) => ` data-reveal style="--i:${i}"`;
+
+// Decorative mini illustrations for the bento service cards (aria-hidden, pure CSS/SVG).
+function bentoArt(key) {
+  const art = {
+    webApps: `<div class="art art-web"><div class="aw-bar"><i></i><i></i><i></i><span></span></div><div class="aw-body"><div class="aw-side"><b></b><b></b><b></b><b></b></div><div class="aw-main"><div class="aw-kpis"><b></b><b></b><b></b></div><svg viewBox="0 0 240 70" preserveAspectRatio="none"><path class="aw-area" d="M0 60 C30 52 45 30 75 34 S120 58 150 38 205 12 240 18 V70 H0Z"/><path class="aw-line" d="M0 60 C30 52 45 30 75 34 S120 58 150 38 205 12 240 18"/></svg></div></div></div>`,
+    integrations: `<div class="art art-int"><span class="ai-node a">${icon("webApps")}</span><svg viewBox="0 0 200 80" preserveAspectRatio="none"><path class="ai-wire" d="M0 20 C70 20 130 60 200 60"/><path class="ai-wire" d="M0 60 C70 60 130 20 200 20"/><path pathLength="100" class="ai-flow" d="M0 20 C70 20 130 60 200 60"/><path pathLength="100" class="ai-flow b" d="M0 60 C70 60 130 20 200 20"/></svg><span class="ai-node b">${icon("payment")}</span></div>`,
+    devops: `<div class="art art-ops"><span class="ao-step">${icon("check")}<i>build</i></span><span class="ao-step">${icon("check")}<i>test</i></span><span class="ao-step live">${icon("devops")}<i>deploy</i></span></div>`,
+    ai: `<div class="art art-ai"><span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span><span class="core">${icon("ai")}</span></div>`,
+  };
+  return art[key] || "";
+}
+
 function renderBlock(b, lang) {
   if (b.p) return `<p>${b.p}</p>`;
   if (b.h3) return `<h3>${esc(b.h3)}</h3>`;
-  if (b.list) return `<ul class="list">${b.list.map((li) => `<li>${li}</li>`).join("")}</ul>`;
-  if (b.steps) return `<ol class="steps">${b.steps.map((s) => `<li><strong>${esc(s.title)}</strong><span>${esc(s.text)}</span></li>`).join("")}</ol>`;
+  if (b.list)
+    return `<ul class="list" role="list">${b.list.map((li) => `<li><span class="tick">${icon("check")}</span><span>${li}</span></li>`).join("")}</ul>`;
+  if (b.steps)
+    return `<ol class="steps">${b.steps
+      .map((s, i) => `<li${reveal(i)}><span class="step-node" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><strong>${esc(s.title)}</strong><span>${esc(s.text)}</span></li>`)
+      .join("")}</ol>`;
   if (b.cards) {
     const keyOf = (href) => SERVICE_KEYS.find((k) => pathOf(k, lang) === href);
-    return `<ul class="cards" role="list">${b.cards
-      .map((c) => `<li class="card"><div class="card-icon">${icon(keyOf(c.href))}</div><h3><a href="${c.href}">${esc(c.title)}</a></h3><p>${esc(c.text)}</p><span class="more" aria-hidden="true">${esc(CONTENT[lang].ui.readMore)} →</span></li>`)
+    return `<ul class="bento" role="list">${b.cards
+      .map((c, i) => {
+        const k = keyOf(c.href);
+        return `<li class="card glow-card card-${k}"${reveal(i)}><span class="glow" aria-hidden="true"></span><div class="card-art" aria-hidden="true">${bentoArt(k)}</div><div class="card-body"><div class="card-icon">${icon(k)}</div><h3><a href="${c.href}">${esc(c.title)}</a></h3><p>${esc(c.text)}</p><span class="more" aria-hidden="true">${esc(CONTENT[lang].ui.readMore)} ${icon("arrow")}</span></div></li>`;
+      })
       .join("")}</ul>`;
   }
-  if (b.clients) return `<ul class="clients" role="list">${CLIENTS.map(([n]) => `<li>${esc(n)}</li>`).join("")}</ul>`;
+  if (b.clients)
+    return `<ul class="clients" role="list">${CLIENTS.map(([n], i) => `<li${reveal(i)}>${esc(n)}</li>`).join("")}</ul>`;
   if (b.legal) {
     const L = CONTENT[lang].ui.legalLabels;
     const a = COMPANY.address;
@@ -404,8 +442,41 @@ function renderBlock(b, lang) {
   throw new Error(`unknown block ${JSON.stringify(b)}`);
 }
 
+// h3 + following paragraphs become project cards.
+function renderProjects(blocks, lang) {
+  const groups = [];
+  for (const b of blocks) {
+    if (b.h3) groups.push({ h3: b.h3, icon: b.icon, body: [] });
+    else groups[groups.length - 1].body.push(b);
+  }
+  return `<div class="projects">${groups
+    .map(
+      (g, i) =>
+        `<article class="project glow-card"${reveal(i)}><span class="glow" aria-hidden="true"></span><div class="project-top"><span class="card-icon">${icon(g.icon)}</span><span class="project-num" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span></div><h3>${esc(g.h3)}</h3>${g.body.map((b) => renderBlock(b, lang)).join("")}</article>`
+    )
+    .join("")}</div>`;
+}
+
 const slug = (s) =>
   s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "dj").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+// Section layout is derived from the blocks: "wide" blocks (cards, steps, project h3s, clients)
+// get a stacked layout with the heading on top; text-only sections get a two-column split.
+function renderSection(s, i, lang) {
+  const id = slug(s.h2);
+  const num = `<span class="sec-num" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>`;
+  const isWide = (b) => b.cards || b.steps || b.h3 || b.clients;
+  const firstWide = s.blocks.findIndex(isWide);
+  if (firstWide === -1) {
+    const legal = s.blocks.some((b) => b.legal) ? " sec-legal" : "";
+    return `<section class="section sec-split${legal}" aria-labelledby="${id}"><div class="container split"><div class="sec-head"${reveal()}>${num}<h2 id="${id}">${esc(s.h2)}</h2></div><div class="prose"${reveal(1)}>${s.blocks.map((b) => renderBlock(b, lang)).join("\n")}</div></div></section>`;
+  }
+  const intro = s.blocks.slice(0, firstWide);
+  const rest = s.blocks.slice(firstWide);
+  const body = rest.some((b) => b.h3) ? renderProjects(rest, lang) : rest.map((b) => renderBlock(b, lang)).join("\n");
+  const kind = rest.some((b) => b.cards) ? "sec-bento" : rest.some((b) => b.steps) ? "sec-process" : rest.some((b) => b.clients) ? "sec-clients" : "sec-projects";
+  return `<section class="section ${kind}" aria-labelledby="${id}"><div class="container"><div class="sec-head stacked"${reveal()}>${num}<h2 id="${id}">${esc(s.h2)}</h2>${intro.map((b) => renderBlock(b, lang)).join("")}</div>${body}</div></section>`;
+}
 
 function heroCtas(pg, lang) {
   if (!pg.heroCtas) return "";
@@ -413,9 +484,43 @@ function heroCtas(pg, lang) {
     .map((c) => {
       const href = c.mail ? mailto(lang) : c.href;
       const attrs = c.contact ? " data-contact" : "";
-      return `<a class="btn${c.primary ? " primary" : ""}" href="${href}"${attrs}>${esc(c.label)}</a>`;
+      return `<a class="btn${c.primary ? " primary" : ""}" href="${href}"${attrs}>${esc(c.label)}${c.primary ? icon("arrow") : ""}</a>`;
     })
     .join("")}</div>`;
+}
+
+// Hero background: grid lines, a cursor-following glow (site.js sets --mx/--my) and a few
+// pulsing cells (adapted from 21st.dev "DataGridHero"), plus two slow aurora blobs.
+const PULSE_CELLS = [[14, 2], [17, 4], [20, 1], [22, 5], [19, 8], [24, 3], [15, 9], [23, 7]];
+const heroBg = () =>
+  `<div class="hero-bg" aria-hidden="true"><span class="aurora a1"></span><span class="aurora a2"></span><span class="grid-lines"></span><span class="grid-glow"></span>${PULSE_CELLS.map(([x, y], i) => `<i class="cell" style="--x:${x};--y:${y};--d:${(i * 0.7) % 4}s"></i>`).join("")}</div>`;
+
+// Home hero visual: the four services orbiting the Tridan core, plus a small deploy log.
+function heroVisual(lang) {
+  const nodes = [
+    ["webApps", "Web", "n1"],
+    ["integrations", "API", "n2"],
+    ["devops", "Cloud", "n3"],
+    ["ai", "AI", "n4"],
+  ];
+  return `<div class="hero-visual" aria-hidden="true"><div class="hv-stage"><svg class="hv-lines" viewBox="0 0 400 400" fill="none"><circle cx="200" cy="200" r="150" class="hv-orbit"/><circle cx="200" cy="200" r="96" class="hv-orbit inner"/><path class="hv-path" d="M200 200 C150 200 120 150 92 110"/><path class="hv-path" d="M200 200 C250 200 280 150 308 110"/><path class="hv-path" d="M200 200 C150 200 120 250 92 290"/><path class="hv-path" d="M200 200 C250 200 280 250 308 290"/><path pathLength="100" class="hv-flow" d="M200 200 C150 200 120 150 92 110"/><path pathLength="100" class="hv-flow f2" d="M200 200 C250 200 280 150 308 110"/><path pathLength="100" class="hv-flow f3" d="M200 200 C150 200 120 250 92 290"/><path pathLength="100" class="hv-flow f4" d="M200 200 C250 200 280 250 308 290"/></svg><div class="hv-core">${LOGO_MARK}</div>${nodes
+    .map(([k, label, cls]) => `<div class="hv-node ${cls}">${icon(k)}<span>${label}</span></div>`)
+    .join("")}<div class="hv-term"><div class="hv-term-bar"><i></i><i></i><i></i></div><code><b>$</b> git push origin main</code><code class="ok">${icon("check")} tests passed</code><code class="ok">${icon("check")} deployed</code></div></div></div>`;
+}
+
+// Service pages: the service icon as a glowing tile on the right of the hero.
+// Services overview shows all four icons; projects/about/contact show the Tridan mark.
+const serviceVisual = (key) => {
+  const inner =
+    key === "services"
+      ? `<span class="svc-tile quad">${SERVICE_KEYS.map((k) => icon(k)).join("")}</span>`
+      : `<span class="svc-tile${SERVICE_KEYS.includes(key) ? "" : " mark"}">${SERVICE_KEYS.includes(key) ? icon(key) : LOGO_MARK}</span>`;
+  return `<div class="svc-visual" aria-hidden="true"><span class="ring r1"></span><span class="ring r2"></span>${inner}</div>`;
+};
+
+function stackStrip(lang) {
+  const { ui } = CONTENT[lang];
+  return `<div class="stack"><p class="stack-label">${esc(ui.stackLabel)}</p><ul class="stack-list" role="list">${STACK.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>`;
 }
 
 function renderPage(key, lang) {
@@ -430,28 +535,26 @@ function renderPage(key, lang) {
       : `<nav class="breadcrumbs" aria-label="${lang === "sr" ? "Putanja" : "Breadcrumb"}"><ol>${breadcrumbTrail(key, lang)
           .map((b, i, arr) => (i === arr.length - 1 ? `<li><span aria-current="page">${esc(b.name)}</span></li>` : `<li><a href="${b.path}">${esc(b.name)}</a></li>`))
           .join("")}</ol></nav>`;
-  const sections = pg.sections
-    .map((s) => {
-      const id = slug(s.h2);
-      return `<section class="section" aria-labelledby="${id}"><div class="container prose"><h2 id="${id}">${esc(s.h2)}</h2>${s.blocks.map((b) => renderBlock(b, lang)).join("\n")}</div></section>`;
-    })
-    .join("\n");
+  const sections = pg.sections.map((s, i) => renderSection(s, i, lang)).join("\n");
   const faq = pg.faq?.length
-    ? `<section class="section faq" aria-labelledby="faq"><div class="container prose"><h2 id="faq">${esc(ui.faqHeading)}</h2>${pg.faq
-        .map((f) => `<details><summary>${esc(f.q)}</summary><p>${f.a}</p></details>`)
-        .join("\n")}</div></section>`
+    ? `<section class="section faq sec-split" aria-labelledby="faq"><div class="container split"><div class="sec-head"${reveal()}><span class="sec-num" aria-hidden="true">FAQ</span><h2 id="faq">${esc(ui.faqHeading)}</h2></div><div class="faq-list">${pg.faq
+        .map((f, i) => `<details${reveal(i)}><summary><span>${esc(f.q)}</span><span class="chev" aria-hidden="true"></span></summary><div class="faq-a"><p>${f.a}</p></div></details>`)
+        .join("\n")}</div></div></section>`
     : "";
   const cta =
     key === "contact" || key === "privacy"
       ? ""
-      : `<section class="cta-band" aria-labelledby="cta"><div class="container"><h2 id="cta">${esc(ui.ctaTitle)}</h2><p>${esc(ui.ctaText)}</p><div class="cta-row"><a class="btn primary" href="${mailto(lang)}">${esc(ui.ctaButton)}: ${COMPANY.email}</a><a class="btn" href="${pathOf("contact", lang)}" data-contact>${esc(ui.ctaSecondary)}</a></div></div></section>`;
-  const eyebrow = key === "home" ? `<span class="eyebrow">${lang === "sr" ? "Agencija za razvoj softvera · Beograd" : "Software development agency · Belgrade"}</span>` : "";
+      : `<section class="cta-band" aria-labelledby="cta"><div class="container"><div class="cta-panel"${reveal()}><div class="cta-bg" aria-hidden="true"></div><h2 id="cta">${esc(ui.ctaTitle)}</h2><p>${esc(ui.ctaText)}</p><div class="cta-row"><a class="btn primary" href="${mailto(lang)}">${esc(ui.ctaButton)}: ${COMPANY.email}</a><a class="btn" href="${pathOf("contact", lang)}" data-contact>${esc(ui.ctaSecondary)}</a></div></div></div></section>`;
+  const isHome = key === "home";
+  const eyebrow = isHome ? `<span class="eyebrow"><span class="dot" aria-hidden="true"></span>${lang === "sr" ? "Agencija za razvoj softvera · Beograd" : "Software development agency · Belgrade"}</span>` : "";
   const updated = pg.lastUpdated ? `<p class="updated">${esc(ui.lastUpdated)}: ${esc(pg.lastUpdated)}</p>` : "";
+  const visual = isHome ? heroVisual(lang) : ["privacy"].includes(key) ? "" : serviceVisual(key);
+  const heroCls = `hero${isHome ? " hero-home" : " compact"}${visual ? " has-visual" : ""}`;
   const html = `${head({ lang, title: pg.title, description: pg.description, path, alternates, ld: graph(key, lang) })}
 <body>
 ${header(lang, key, pathOf(key, other))}
 <main id="main">
-<div class="hero${key === "home" ? "" : " compact"}"><div class="container">${crumbs}${eyebrow}<h1>${esc(pg.h1)}</h1><p class="lead">${pg.lead}</p>${updated}${heroCtas(pg, lang)}</div></div>
+<div class="${heroCls}">${heroBg()}<div class="container hero-inner"><div class="hero-copy">${crumbs}${eyebrow}<h1>${esc(pg.h1)}</h1><p class="lead">${pg.lead}</p>${updated}${heroCtas(pg, lang)}</div>${visual}</div>${isHome ? `<div class="container">${stackStrip(lang)}</div>` : ""}</div>
 ${sections}
 ${faq}
 ${cta}
@@ -469,14 +572,14 @@ function render404(lang) {
   const nf = ui.notFound;
   const other = LANGS.find((l) => l !== lang);
   const links = ["home", "services", "projects", "contact"]
-    .map((k) => `<li><a href="${pathOf(k, lang)}">${esc(k === "home" ? ui.breadcrumbHome : pages[k].breadcrumb)}</a></li>`)
+    .map((k) => `<li><span class="tick">${icon("arrow")}</span><a href="${pathOf(k, lang)}">${esc(k === "home" ? ui.breadcrumbHome : pages[k].breadcrumb)}</a></li>`)
     .join("");
   const html = `${head({ lang, title: nf.title, description: nf.description, noindex: true })}
 <body>
 ${header(lang, null, pathOf("home", other))}
 <main id="main">
-<div class="hero compact"><div class="container"><span class="eyebrow">404</span><h1>${esc(nf.h1)}</h1><p class="lead">${esc(nf.text)}</p></div></div>
-<section class="section"><div class="container prose"><ul class="list">${links}</ul><p><a href="${pathOf("home", other)}" hreflang="${other}" lang="${other}">${esc(nf.other)}</a></p></div></section>
+<div class="hero compact">${heroBg()}<div class="container hero-inner"><div class="hero-copy"><span class="eyebrow"><span class="dot" aria-hidden="true"></span>404</span><h1>${esc(nf.h1)}</h1><p class="lead">${esc(nf.text)}</p></div></div></div>
+<section class="section"><div class="container prose"><ul class="list" role="list">${links}</ul><p><a href="${pathOf("home", other)}" hreflang="${other}" lang="${other}">${esc(nf.other)}</a></p></div></section>
 </main>
 ${footer(lang)}
 ${cookieBanner(lang)}
