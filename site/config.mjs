@@ -16,7 +16,7 @@ export const COMPANY = {
   taxId: "115999142", // PIB
   email: "office@tridan.rs",
   address: {
-    street: "Koste Racina 24, stan 1",
+    street: "Koste Racina 24",
     postalCode: "11040",
     locality: "Beograd-Savski Venac",
     localityEn: "Belgrade (Savski Venac)",
