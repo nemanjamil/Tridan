@@ -40,15 +40,14 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Plain http on the canonical host -> https (301). Other hosts are caught by the rule below.
+  # One canonical host, https://tridan.rs without www: www, the old madeofwood hosts and plain
+  # http all 301 there in a single hop.
+  RewriteCond %{HTTP_HOST} ^(www\.tridan\.rs|tridan\.madeofwood\.rs|www\.tridan\.madeofwood\.rs)\.?(:\d+)?$ [NC]
+  RewriteRule ^ https://tridan.rs%{REQUEST_URI} [R=301,L,NE]
   RewriteCond %{HTTPS} !=on
   RewriteCond %{HTTP:X-Forwarded-Proto} !=https
-  RewriteCond %{HTTP_HOST} ^www\.tridan\.rs\.?(:\d+)?$ [NC]
-  RewriteRule ^ https://www.tridan.rs%{REQUEST_URI} [R=301,L,NE]
-
-  # One canonical host: apex and the old madeofwood host -> https://www.tridan.rs (301).
-  RewriteCond %{HTTP_HOST} ^(tridan\.rs|tridan\.madeofwood\.rs)\.?(:\d+)?$ [NC]
-  RewriteRule ^ https://www.tridan.rs%{REQUEST_URI} [R=301,L,NE]
+  RewriteCond %{HTTP_HOST} ^tridan\.rs\.?(:\d+)?$ [NC]
+  RewriteRule ^ https://tridan.rs%{REQUEST_URI} [R=301,L,NE]
 
   # Explicit .../index.html in the address bar -> the clean folder URL (only real client
   # requests, never the internal DirectoryIndex subrequest).
@@ -58,7 +57,7 @@ ErrorDocument 404 /404.html
 
 # Old template pages (orphan /detailview/*.php case studies) -> projects page.
 <IfModule mod_alias.c>
-  RedirectMatch 301 ^/detailview(/.*)?$ https://www.tridan.rs/projekti/
+  RedirectMatch 301 ^/detailview(/.*)?$ https://tridan.rs/projekti/
 </IfModule>
 
 # Compression.
