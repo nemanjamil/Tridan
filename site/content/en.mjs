@@ -24,6 +24,7 @@ export const ui = {
   ctaSecondary: "Contact page",
   mailSubject: "Inquiry from tridan.rs",
   faqHeading: "Frequently asked questions",
+  stackLabel: "Technologies we work with",
   readMore: "Learn more",
   footer: {
     tagline: "Custom software development agency in Belgrade: web applications, integrations and APIs, DevOps and cloud, AI integration.",
@@ -102,6 +103,7 @@ export const pages = {
         h2: "Who has Tridan worked with?",
         blocks: [
           { p: `We have worked with companies such as Coca-Cola, VIBE, ICO-cert, Blokaria, Billboard and Nature Plant, on projects ranging from biometric systems and online exams to promotional campaigns and blockchain technology. See the details on the <a href="${p("projects")}">projects</a> page.` },
+          { clients: true }
         ],
       },
       {
@@ -405,17 +407,17 @@ export const pages = {
       {
         h2: "Which projects has Tridan delivered?",
         blocks: [
-          { h3: "Online exam platforms with face analysis" },
+          { h3: "Online exam platforms with face analysis", icon: "face" },
           { p: "We work with clients in the biometrics field. We built online exam platforms with integrated face analysis and fraud management." },
-          { h3: "CI/CD on AWS and Azure" },
+          { h3: "CI/CD on AWS and Azure", icon: "pipeline" },
           { p: `We set up continuous integration and continuous delivery pipelines on Amazon Web Services and Microsoft Azure for efficient and reliable software delivery. More on the <a href="${p("devops")}">DevOps and cloud</a> page.` },
-          { h3: "Payment gateway integration" },
+          { h3: "Payment gateway integration", icon: "payment" },
           { p: `We integrated payment gateways tailored to companies in the United Kingdom and Ireland. See <a href="${p("integrations")}">integrations and APIs</a>.` },
-          { h3: "Database migration" },
+          { h3: "Database migration", icon: "database" },
           { p: "We carried out database migrations for global enterprises." },
-          { h3: "Promotional campaigns" },
+          { h3: "Promotional campaigns", icon: "campaign" },
           { p: "We supported promotional campaigns such as Coca-Cola giveaways by integrating the systems that power marketing activities." },
-          { h3: "Blockchain solutions" },
+          { h3: "Blockchain solutions", icon: "blockchain" },
           { p: "We delivered projects on the Cardano and Avalanche blockchain networks, with solutions built on decentralised networks." },
         ],
       },
@@ -503,6 +505,7 @@ export const pages = {
               "<strong>Google Analytics 4</strong> (cookies <code>_ga</code> and <code>_ga_*</code>): cookies are set only after you click \"Accept\". It records pages visited, device type and approximate location so we can see which pages are useful. Before consent the Google tag runs without cookies and sends only anonymous signals without identifiers (Google Consent Mode).",
               "<strong>Your choice</strong> (<code>tridan-consent</code> in the browser's local storage): remembers whether you accepted or rejected analytics.",
               "<strong>Email</strong>: when you write to us, we use your address and message only to reply and discuss the project.",
+              "<strong>Chat (Tridan AI)</strong>: the chat window in the bottom right corner of the site runs on the Tridan AI platform and processes what you type into it.",
             ],
           },
         ],
